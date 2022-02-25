@@ -1,0 +1,68 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<WebAppInstaCoreMVC.Models.Client>
+
+ 
+
+@{
+    ViewBag.Title = "ReturnData";
+}
+
+
+ 
+
+<h2>Index</h2>
+
+ 
+
+<p>
+    
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RCS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adresse)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+
+ 
+
+        <th>
+            @foreach (var item in Model) {
+    <tr>
+        <td>
+            @*Instructions lambda*@
+       @*     Une instruction lambda ressemble à une expression lambda,
+            sauf que ses instructions sont placées entre accolades :*@
+            @Html.DisplayFor(modelItem => item.RCS)
+       
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Adresse)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+                <td>
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+        
+     
+    </tr>
+}
+
+
+</table>
+ 
+
+
+
